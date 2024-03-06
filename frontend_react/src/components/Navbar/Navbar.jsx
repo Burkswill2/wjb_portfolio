@@ -15,6 +15,12 @@ const Navbar = () => {
      */
     const [toggle, setToggle] = React.useState(false)
 
+
+    const variants = {
+        open: { opacity: 1, x: 0 },
+        closed: { opacity: 0, x: "100%" },
+    }
+
     const navBarItems = [
         'home',
         'about',
@@ -54,11 +60,11 @@ const Navbar = () => {
 
             <div className="app__navbar-menu">
                 <HiMenuAlt4 onClick={handleMenuOpen}/>
-                {toggle && (
                     <motion.div
-                        initial={{x: 300}}
-                        animate={{x: 0}}
-                        transition={{duration: 0.85, ease: "easeOut"}}
+                        initial={{x: "100%"}}
+                        animate={toggle ? "open" : "closed"}
+                        variants={variants}
+                        transition={{duration: 0.5, ease: "easeInOut"}}
                     >
                         <HiX onClick={handleMenuClose}/>
                         <ul className="app__navbar-links">
@@ -71,7 +77,7 @@ const Navbar = () => {
                         </ul>
                         >
                     </motion.div>
-                )}
+
             </div>
         </nav>
     );
