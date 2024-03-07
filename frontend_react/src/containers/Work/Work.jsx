@@ -8,7 +8,7 @@ import './Work.scss'
 
 const Work = () => {
 
-    const handle
+
 
     return (
         <>
