@@ -5,15 +5,35 @@ import {AppWrap} from "../../wrapper";
 
 import './About.scss'
 
+/**
+ * About component fetches and displays data type "abouts" from the client.
+ * It uses the Framer Motion library to apply view and hover animations on the profile items.
+ *
+ * @returns {React.Node} A React component to render the 'About' section of the application that consists of motion-enabled profile items.
+ * Each profile consists of an image, title, and description. The 'About' section is enclosed under AppWrap for additional context.
+ *
+ */
 const About = () => {
 
+    /**
+     * A state variable, `abouts`, is created and the setter method `setAbouts` is defined.
+     * Initially, `abouts` is an empty array.
+     */
     const [abouts, setAbouts] = React.useState([])
 
+    /**
+     * `Runs after every rendering.
+     *
+     * The effect is fetching data of type 'abouts' from the client and
+     * updating the state variable `abouts` with the fetched data.
+     *
+     * @type {Array} abouts - An array state variable used to store the data fetched from the client.
+     * @type {function} setAbouts - Function used to update the state variable abouts.
+     */
     React.useEffect(() => {
         const query = '*[_type == "abouts"]';
         client.fetch(query).then((data) => {
-                setAbouts(data);
-                console.log(data);
+            setAbouts(data);
             }
         )
     }, []);
