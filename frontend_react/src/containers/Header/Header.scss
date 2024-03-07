@@ -20,11 +20,11 @@
   height: 100%;
   flex-direction: row;
 
-  padding: 8rem 2rem 0;
+  padding: 10rem 2rem 0;
 
   //Extra large devices
   @media screen and (min-width: 2000px) {
-    padding-top:8rem;
+    padding-top:10rem;
   }
 
   //Screens smaller than tablet
@@ -167,7 +167,7 @@
 
 .app__header-img {
   flex: 1;
-  height: 100%;
+
 
   display: flex;
   justify-content: flex-end;
@@ -178,7 +178,7 @@
     width: 100%;
     object-fit: contain;
     z-index: 1;
-    height: 450px;
+    height: 600px;
 
     //Extra large devices
     @media screen and (min-width: 2000px) {
@@ -186,8 +186,8 @@
     }
 
     //Screens smaller than tablet
-    @media screen and (max-width: 1200px) {
-      height: 600px
+    @media screen and (max-width: 450px) {
+      height: 450px
     }
   }
 
