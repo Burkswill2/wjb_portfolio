@@ -6,17 +6,34 @@ import { images } from '../../constants';
 
 import './Header.scss'
 
-
+/**
+ * Header component
+ * This is a presentation component which renders the header of the page.
+ *
+ * @component
+ */
 const Header = () => {
 
+    /**
+     * This describes the motion characteristics – such as variation in scale
+     * and opacity – of the rendered element while it is in view.
+     *
+     * @typedef {Object} scaleVariants
+     * @property {Object} whileInView
+     * @property {number[]} whileInView.scale
+     * @property {number[]} whileInView.opacity
+     * @property {Object} whileInView.transition
+     * @property {number} whileInView.transition.duration
+     * @property {string} whileInView.transition.ease
+     */
     const scaleVariants = {
-        whileInView:{
-           scale: [0,1],
-           opacity: [0, 1],
-           transition: {
-               duration: 1,
-               ease: 'easeInOut'
-           }
+        whileInView: {
+            scale: [0,1],
+            opacity: [0, 1],
+            transition: {
+                duration: 1,
+                ease: 'easeInOut'
+            }
         }
     }
 
