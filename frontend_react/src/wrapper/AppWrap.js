@@ -3,6 +3,16 @@ import SocialMedia from "../components/Social Media/SocialMedia";
 import NavigationDots from "../components/Navigation Dots/NavigationDots";
 
 
+/**
+ * Higher Order Component that wraps a given component.
+ * Creates a container with an ID, custom classNames, social media section,
+ * wrapped component, copyright information, and navigation dots.
+ *
+ * @param {React.Component} Component - The component to be wrapped.
+ * @param {string} idName - The ID for the container element.
+ * @param {string} classNames - Additional classNames to be added to the container element.
+ * @returns {function} - Higher Order Component
+ */
 const AppWrap = (Component, idName, classNames) => function HOC() {
     return (
         <div id={idName} className={`app__container ${classNames}`}>

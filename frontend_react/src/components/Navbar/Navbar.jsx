@@ -5,22 +5,32 @@ import './Navbar.scss'
 import {images} from '../../constants'
 
 /**
- * Navbar component displaying navigation links and a toggleable menu.
- * Utilizes Framer Motion for animation effects.
+ * Navbar component.
+ * It displays navigation links and houses the functionality to enable and disable the right hand expansion menu.
+ *
+ * @component
  */
 const Navbar = () => {
 
     /**
-     * State to manage the toggle state of the menu
+     * @description A state variable used to toggle the visibility of the menu.
+     * @type {boolean} toggle
      */
     const [toggle, setToggle] = React.useState(false)
 
-
+    /**
+     * @type {Object} variants
+     * Variants to specify animation behaviours.
+     */
     const variants = {
         open: { opacity: 1, x: 0 },
         closed: { opacity: 0, x: "100%" },
     }
 
+    /**
+     * @type {Array.<string>} navBarItems
+     * Defines the menu items for the navbar.
+     */
     const navBarItems = [
         'home',
         'about',
@@ -30,14 +40,16 @@ const Navbar = () => {
     ]
 
     /**
-     * Handles click event on the menu icon to open the menu.
+     * Opens the dropdown menu by setting toggle state to true.
+     * Called when menu icon is clicked.
      */
     const handleMenuOpen = () => {
         setToggle(true);
     }
 
     /**
-     * Handles click event on the close icon to close the menu.
+     * Closes the dropdown menu by setting toggle state to false.
+     * Called when close icon in the right hand expansion menu is clicked.
      */
     const handleMenuClose = () => {
         setToggle(false);

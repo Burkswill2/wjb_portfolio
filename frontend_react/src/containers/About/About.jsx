@@ -32,6 +32,11 @@ const About = () => {
      */
     React.useEffect(() => {
         const query = '*[_type == "abouts"]';
+
+        /**
+         * client.fetch is a function which takes a query string
+         * and resolves with data, in this case, it updates our abouts state.
+         */
         client.fetch(query).then((data) => {
             setAbouts(data);
             }
@@ -53,7 +58,6 @@ const About = () => {
                         <img src={urlFor(about.imgUrl)} alt={about.title}/>
                         <h2 className="bold-text" style={{marginTop: 20}}>{about.title}</h2>
                         <p className="p" style={{marginTop: 10}}>{about.description}</p>
-
                     </motion.div>
                 ))}
             </div>
