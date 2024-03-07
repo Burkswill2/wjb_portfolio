@@ -20,7 +20,7 @@
   height: 100%;
   flex-direction: row;
 
-  padding: 6rem 2rem 0;
+  padding: 8rem 2rem 0;
 
   //Extra large devices
   @media screen and (min-width: 2000px) {
@@ -178,6 +178,17 @@
     width: 100%;
     object-fit: contain;
     z-index: 1;
+    height: 450px;
+
+    //Extra large devices
+    @media screen and (min-width: 2000px) {
+      height: 1000px;
+    }
+
+    //Screens smaller than tablet
+    @media screen and (max-width: 1200px) {
+      height: 600px
+    }
   }
 
   .overlay_circle {
