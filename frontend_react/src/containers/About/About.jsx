@@ -2,31 +2,35 @@ import React from 'react';
 import {motion} from "framer-motion";
 import { urlFor, client } from '../../client'
 import {AppWrap} from "../../wrapper";
+
 import './About.scss'
 
 /**
- * The About component renders the About page
- * It fetches data from a client and maps through the data to display it.
+ * About component fetches and displays data type "abouts" from the client.
+ * It uses the Framer Motion library to apply view and hover animations on the profile items.
  *
- * @component
+ * @returns {React.Node} A React component to render the 'About' section of the application that consists of motion-enabled profile items.
+ * Each profile consists of an image, title, and description. The 'About' section is enclosed under AppWrap for additional context.
+ *
  */
 const About = () => {
 
     /**
-     * @typedef abouts A state variable which stores fetched abouts data which is a list of page sections
-     * @type {Array}
+     * A state variable, `abouts`, is created and the setter method `setAbouts` is defined.
+     * Initially, `abouts` is an empty array.
      */
     const [abouts, setAbouts] = React.useState([])
 
     /**
-     * Fetches data when the component mounts
-     * and updates the abouts state.
+     * `Runs after every rendering.
+     *
+     * The effect is fetching data of type 'abouts' from the client and
+     * updating the state variable `abouts` with the fetched data.
+     *
+     * @type {Array} abouts - An array state variable used to store the data fetched from the client.
+     * @type {function} setAbouts - Function used to update the state variable abouts.
      */
     React.useEffect(() => {
-        /**
-         * @type {string} query
-         * The query string to fetch abouts data type from the client.
-         */
         const query = '*[_type == "abouts"]';
 
         /**
@@ -34,8 +38,7 @@ const About = () => {
          * and resolves with data, in this case, it updates our abouts state.
          */
         client.fetch(query).then((data) => {
-                setAbouts(data);
-                console.log(data);
+            setAbouts(data);
             }
         )
     }, []);
