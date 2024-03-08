@@ -73,10 +73,9 @@ const Work = () => {
     React.useEffect(() => {
         const query = '*[_type == "works"]';
         client.fetch(query).then((data) => {
-                setWorks(data);
-                setFilterWork(data);
-            }
-        )
+            setWorks(data);
+            setFilterWork(data);
+        })
     }, []);
 
     return (
