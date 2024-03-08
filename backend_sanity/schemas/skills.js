@@ -11,7 +11,8 @@ export default{
         {
             name:'bgColor',
             title:'BgColor',
-            type:'string'
+            type:'string',
+            initialValue: 'edf2f8'
         },
         {
             name:'icon',

@@ -1,7 +1,7 @@
 import React from 'react';
 import {motion} from "framer-motion";
 import { urlFor, client } from '../../client'
-import {AppWrap} from "../../wrapper";
+import {AppWrap, MotionWrap} from "../../wrapper";
 
 import './About.scss'
 
@@ -32,11 +32,7 @@ const About = () => {
      */
     React.useEffect(() => {
         const query = '*[_type == "abouts"]';
-
-        /**
-         * client.fetch is a function which takes a query string
-         * and resolves with data, in this case, it updates our abouts state.
-         */
+        //Todo: Add proper error handling
         client.fetch(query).then((data) => {
             setAbouts(data);
             }
@@ -65,4 +61,6 @@ const About = () => {
     );
 }
 
-export default AppWrap(About, 'about');
+export default AppWrap(
+    MotionWrap(About, 'app__about'),
+    'about', "app__whitebg");
