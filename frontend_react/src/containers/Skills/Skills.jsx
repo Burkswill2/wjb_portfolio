@@ -1,12 +1,11 @@
 import * as React from 'react';
-import { AiFillEye, AiFillGithub } from "react-icons/ai";
 import { motion } from "framer-motion";
 import Tooltip from '@mui/material/Tooltip';
 import {AppWrap, MotionWrap} from "../../wrapper";
 import { urlFor, client } from "../../client";
 
 import './Skills.scss'
-import {Button, Fade} from "@mui/material";
+import { Fade } from "@mui/material";
 
 
 /**
@@ -40,7 +39,6 @@ const Skills = () => {
         //Todo: Add proper error handling
         client.fetch(query_experiences).then((data) => {
             setExperience(data);
-            console.log(data);
         })
 
         //Todo: Add proper error handling
@@ -69,16 +67,16 @@ const Skills = () => {
                     ))}
                 </motion.div>
                 <motion.div className="app__skills-exp">
-                    {experience.map((experience) => (
+                    {experience.map((exp, index) => (
                             <motion.div
                                 className="app__skills-exp-item"
-                                key={experience.year}
+                                key={`${exp.year}-${index}`}
                             >
                                 <div className="app__skills-exp-year">
-                                    <p className="bold.text">{experience.year}</p>
+                                    <p className="bold.text">{exp.year}</p>
                                 </div>
                                 <motion.div className="app__skills-exp-works">
-                                    {experience.works.map((work) => (
+                                    {exp.works.map((work, index) => (
                                         <>
                                             <motion.div
                                                 whileInView={{opacity: [0, 1]}}
@@ -86,7 +84,7 @@ const Skills = () => {
                                                 className="app__skills-exp-work app__flex"
                                                 data-tip
                                                 data-for={work.name}
-                                                key={work.name}
+                                                key={`${exp.year}-${work.name}-${index}`}
                                             >
 
                                                 <Tooltip
@@ -95,7 +93,7 @@ const Skills = () => {
                                                     TransitionComponent={Fade}
                                                     TransitionProps={{ timeout: 600 }}
                                                     placement='right'
-                                                    arrow="true"
+                                                    arrow={true}
                                                     componentsProps={{
                                                         tooltip: {
                                                             sx: {
