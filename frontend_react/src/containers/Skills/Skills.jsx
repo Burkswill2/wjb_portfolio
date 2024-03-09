@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import { motion } from "framer-motion";
 import Tooltip from '@mui/material/Tooltip';
 import {AppWrap, MotionWrap} from "../../wrapper";
@@ -73,18 +73,19 @@ const Skills = () => {
                                 key={`${exp.year}-${index}`}
                             >
                                 <div className="app__skills-exp-year">
-                                    <p className="bold.text">{exp.year}</p>
+                                    <p className="bold.text" >{exp.year}</p>
                                 </div>
                                 <motion.div className="app__skills-exp-works">
                                     {exp.works.map((work, index) => (
-                                        <>
+                                        <React.Fragment
+                                            key={`${exp.year}-${work.name}-${index}`}
+                                        >
                                             <motion.div
                                                 whileInView={{opacity: [0, 1]}}
                                                 transition={{duration: 0.5}}
                                                 className="app__skills-exp-work app__flex"
                                                 data-tip
                                                 data-for={work.name}
-                                                key={`${exp.year}-${work.name}-${index}`}
                                             >
 
                                                 <Tooltip
@@ -121,7 +122,7 @@ const Skills = () => {
                                                 </Tooltip>
                                                 <p className="p-text">{work.company}</p>
                                             </motion.div>
-                                        </>
+                                        </React.Fragment>
                                     ))}
                                 </motion.div>
                             </motion.div>
