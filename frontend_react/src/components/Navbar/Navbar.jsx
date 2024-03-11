@@ -3,6 +3,8 @@ import { HiMenuAlt4,HiX } from "react-icons/hi";
 import { motion } from "framer-motion"
 import './Navbar.scss'
 import {images} from '../../constants'
+import { Link } from 'react-router-dom';
+import Page from "../Pages/WeatherAppDemo"
 
 /**
  * Navbar component.
@@ -66,8 +68,8 @@ const Navbar = () => {
                         <div/>
                         <a href={`#${item}`}>{item}</a>
                     </li>
-
                 ))}
+                <li className="app__flex p-text"><Link to="/page">Page</Link></li>
             </ul>
 
             <div className="app__navbar-menu">
