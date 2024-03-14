@@ -27,9 +27,6 @@ const Navbar = () => {
         }
     };
 
-
-    const navigate = useNavigate();
-
     /**
      * @description A state variable used to toggle the visibility of the menu.
      * @type {boolean} toggle
@@ -98,7 +95,7 @@ const Navbar = () => {
                         <ul className="app__navbar-links">
                             {navBarItems.map((item) => (
                                 <li key={item}>
-                                    <a href={`#${item}`}>{item}</a>
+                                    {renderLink(item)}
                                 </li>
 
                             ))}

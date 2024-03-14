@@ -98,13 +98,11 @@ img {
   height: 170px;
   border-radius: 15px;
   object-fit: cover; //prevent img skew
-}
-@media screem and (min-width: 200px) {
-  width: 370px;
-  margin: 2rem 4rem;
+  justify-content: center;
+  //@media screen and (min-width: 2000px) {
+  //  width: 370px;
+  //  margin: 2rem 4rem;
+  //  height: auto;
+  //}
 
-  img {
-    height: auto;
-    width: 160px
-  }
 }
