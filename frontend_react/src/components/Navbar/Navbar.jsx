@@ -3,7 +3,7 @@ import { HiMenuAlt4,HiX } from "react-icons/hi";
 import { motion } from "framer-motion"
 import './Navbar.scss'
 import {images} from '../../constants'
-import {Link, useLocation, useNavigate} from 'react-router-dom';
+import {Link, useLocation} from 'react-router-dom';
 
 /**
  * Navbar component.
