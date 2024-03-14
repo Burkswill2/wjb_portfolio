@@ -1,6 +1,3 @@
-import defaultIcon from "./assets/defaultIcon.png";
-
-
 const API_KEY =
 '16ccbd7d490583457ad2c092ae4b0738';
 

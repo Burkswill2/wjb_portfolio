@@ -88,7 +88,7 @@ function WeatherApp() {
                             <h3>{`${weather.name}, ${weather.country}`}</h3>
                             <img
                                 className="image"
-                                src= {weather.iconURL}
+                                src={weather.iconURL}
                                 alt="weatherIcon"
                             />
                             <h3>{weather.description}</h3>
@@ -97,8 +97,9 @@ function WeatherApp() {
                             <h1>{`${weather.temp.toFixed()} °${units === 'metric' ? 'C' : 'F'}`}</h1>
                         </div>
                     </div>
+
                     {/*bottom description */}
-                    <Descriptions weather = {weather} units = {units}/>
+                    <Descriptions weather={weather} units={units}/>
                 </div>
             </>
             )}
