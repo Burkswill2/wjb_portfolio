@@ -3,8 +3,7 @@ import { HiMenuAlt4,HiX } from "react-icons/hi";
 import { motion } from "framer-motion"
 import './Navbar.scss'
 import {images} from '../../constants'
-import { Link } from 'react-router-dom';
-import Page from "../Pages/WeatherAppDemo"
+import {Link, useLocation, useNavigate} from 'react-router-dom';
 
 /**
  * Navbar component.
@@ -13,6 +12,23 @@ import Page from "../Pages/WeatherAppDemo"
  * @component
  */
 const Navbar = () => {
+
+    const location = useLocation();
+
+    const renderLink = (item) => {
+        if (navBarItems.includes(item)) {
+            if (location.pathname === '/') {
+                return <a href={`#${item}`}>{item}</a>;
+            } else {
+                return <Link to={`/#${item}`}>{item}</Link>;
+            }
+        } else {
+            return location.pathname === '/' ? <a href={`#${item}`}>{item}</a> : <Link to={`/${item}`}>{item}</Link>;
+        }
+    };
+
+
+    const navigate = useNavigate();
 
     /**
      * @description A state variable used to toggle the visibility of the menu.
@@ -66,12 +82,10 @@ const Navbar = () => {
                 {navBarItems.map((item) => (
                     <li className="app__flex p-text" key={`link-${item}`}>
                         <div/>
-                        <a href={`#${item}`}>{item}</a>
+                        {renderLink(item)}
                     </li>
                 ))}
-                <li className="app__flex p-text"><Link to="/page">Page</Link></li>
             </ul>
-
             <div className="app__navbar-menu">
                 <HiMenuAlt4 onClick={handleMenuOpen}/>
                     <motion.div
