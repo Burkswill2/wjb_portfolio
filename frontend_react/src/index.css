@@ -10,6 +10,8 @@
   --gray-color: #6b7688;
   --brown-color: #46364a;
   --white-color: #ffffff;
+  --section-overlay: rgba(0,0,0,0.7);
+  --background-overlay: rgba(0,0,0,0.2);
 }
 
 * {
@@ -17,4 +19,5 @@
   padding: 0;
   margin: 0;
   scroll-behavior: smooth;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }

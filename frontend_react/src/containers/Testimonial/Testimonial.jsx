@@ -42,7 +42,7 @@ const Testimonial = () => {
      * In this case, it fetches testimonials and brands data on the initial render.
      */
     React.useEffect(() => {
-        const query_testimonials = '*[_type == "Testimonials"]'
+        const query_testimonials = '*[_type == "testimonials"]'
         const query_brands = '*[_type == "brands"]'
 
         //Todo: Add proper error handling

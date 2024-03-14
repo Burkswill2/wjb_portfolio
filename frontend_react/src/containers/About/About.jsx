@@ -41,7 +41,7 @@ const About = () => {
 
     return (
         <>
-            <h2 className="head-text"> I know that <span>Good Dev</span> <br /> means <span>Good Business</span> </h2>
+            <h2 className="head-text"> Creating <span>seamless experiences</span> <br /> and <span>relevant solutions </span> </h2>
             <div className="app__profiles">
                 {abouts.map((about, index)=> (
                     <motion.div
