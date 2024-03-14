@@ -7,7 +7,7 @@ import WeatherAppDemo from "./components/Pages/WeatherAppDemo";
 
 const App = () => {
   return (
-      <Router>
+      <Router basename="/frontend_react">
           <div className="app">
               <Navbar/>
               <Routes>
