@@ -1,4 +1,5 @@
 import React from 'react';
+import {useLocation} from "react-router-dom";
 
 /**
  * NavigationDots component.
@@ -15,16 +16,26 @@ import React from 'react';
  * @returns {React.Element} The rendered NavigationDots component
  */
 const NavigationDots = ({active}) => {
+
+    const location = useLocation();
+
+    const [nav, setNav] = React.useState(["wjb-weather"]);
+
+    if (location.pathname  === '/frontend_react' ) {
+        setNav([
+            'home',
+            'about',
+            'work',
+            'skills',
+            'testimonial',
+            'contact'
+        ])
+    }
+
+
     return (
         <div className="app__navigation">
-            {[
-                'home',
-                'about',
-                'work',
-                'skills',
-                'testimonial',
-                'contact'
-            ].map((item, index) => (
+            {nav.map((item, index) => (
                 <a
                     href={`#${item}`}
                     key={item + index}
