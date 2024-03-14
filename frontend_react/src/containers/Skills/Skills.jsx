@@ -108,7 +108,7 @@ const Skills = () => {
                                                                 textAlign: 'center',
                                                                 lineHeight: '1.5',
                                                                 opacity: '1',
-
+                                                                // eslint-disable-next-line no-useless-computed-key
                                                                 ["@media screen and (min-width: 2000px)"]: {
                                                                     fontSize: '1.75rem',
                                                                     maxWidth: '500px',

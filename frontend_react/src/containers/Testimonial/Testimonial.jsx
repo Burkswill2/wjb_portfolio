@@ -75,6 +75,7 @@ const Testimonial = () => {
             case 'right':
                 setCurrentIndex(currentIndex === testimonials.length - 1 ? 0 : currentIndex + 1);
                 break;
+            default: setCurrentIndex(currentIndex)
         }
     }
     /**

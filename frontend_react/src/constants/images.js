@@ -36,7 +36,8 @@ import skype from '../assets/Images/skype.png';
 import spotify from '../assets/Images/spotify.png';
 import net from '../assets/Images/net.png';
 
-export default {
+// Assign the object to a variable
+const images = {
     email,
     mobile,
     api,
@@ -72,3 +73,6 @@ export default {
     spotify,
     net,
 };
+
+// Export the variable
+export default images;

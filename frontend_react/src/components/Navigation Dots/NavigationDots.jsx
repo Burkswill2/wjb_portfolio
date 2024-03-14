@@ -1,5 +1,6 @@
 import React from 'react';
 import {useLocation} from "react-router-dom";
+import "./NavigationDots.scss"
 
 /**
  * NavigationDots component.
@@ -21,16 +22,19 @@ const NavigationDots = ({active}) => {
 
     const [nav, setNav] = React.useState(["wjb-weather"]);
 
-    if (location.pathname  === '/frontend_react' ) {
-        setNav([
-            'home',
-            'about',
-            'work',
-            'skills',
-            'testimonial',
-            'contact'
-        ])
-    }
+    React.useEffect(() => {
+        if (location.pathname === '/') {
+            setNav([
+                'home',
+                'about',
+                'work',
+                'skills',
+                'testimonial',
+                'contact'
+            ]);
+        }
+    }, [location.pathname]);
+
 
 
     return (
@@ -40,8 +44,12 @@ const NavigationDots = ({active}) => {
                     href={`#${item}`}
                     key={item + index}
                     className='app__navigation-dot'
-                    style={active === item ? {backgroundColor: '#313BAC'} : { }}
-                />
+                    style={active === item ? { backgroundColor: '#313BAC' } : {}}
+                    aria-label={`Navigate to ${item} section`} // Accessibility label
+                >
+                    {/* Visually hidden text for screen readers */}
+                    <span className="visually-hidden">Navigate to {item} section</span>
+                </a>
             ))}
         </div>
     );
