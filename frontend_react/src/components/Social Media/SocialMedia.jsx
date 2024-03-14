@@ -1,5 +1,6 @@
 import React from 'react';
 import { SocialIcon } from 'react-social-icons'
+import "./SocialMedia.scss"
 
 /**
  * SocialMedia component.
@@ -24,10 +25,12 @@ const SocialMedia = () => {
             }
         };
 
+        // Set the initial size
         handleResize();
 
         window.addEventListener('resize', handleResize);
 
+        // Cleanup the event listener on component unmount
         return () => window.removeEventListener('resize', handleResize);
     }, []);
 

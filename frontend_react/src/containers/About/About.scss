@@ -15,8 +15,8 @@
 .app__profile-item {
   width: 190px;
   display: flex;
-  justify-content: flex-start;
-  align-items: flex-start;
+  justify-content: center;
+  align-items: center;
   flex-direction: column;
   margin: 2rem;
 }
@@ -26,12 +26,10 @@ img {
   height: 170px;
   border-radius: 15px;
   object-fit: cover; //prevent img skew
-}
-@media screem and (min-width: 200px) {
-  width: 370px;
-  margin: 2rem 4rem;
 
-  img {
+  @media screen and (min-width: 2000px) {
+    width: 370px;
+    margin: 2rem 4rem;
     height: 320px;
   }
 }
