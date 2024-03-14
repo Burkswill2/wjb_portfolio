@@ -1,6 +1,4 @@
 {
-  "homepage": "http://wjb.dev/frontend_react",
-
   "devDependencies": {
     "jsdoc": "^4.0.2"
   }
